@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <title>AI Detection</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="header__logo">
+            <img src="images/logo.svg" alt="AI Detection">
+        </div>
+        <div class="header__navbar">
+            <a href="index.html" class="header__navbar__item _active">
+                Content Detector
+            </a>
+            <a href="subscriptions.html" class="header__navbar__item">
+                Pricing
+            </a>
+        </div>
+        <div class="header__profile">
+            <a href="#">Log in <img src="images/login.svg" alt="Login"/></a>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="detector">
+            <div class="detector__row">
+                <div class="detector__sidebar">
+                    <div class="detector__sidebar__score _active">
+                        <div class="detector__sidebar__score__percent">
+                            <span>15</span>
+                            <img src="images/percent.svg" alt="Percent"/>
+                        </div>
+                        <div class="detector__sidebar__score__title">
+                            <h2>Detection Score</h2>
+                            <h2>Human-Generated</h2>
+                        </div>
+                        <div class="detector__sidebar__score__bar">
+                            <span></span>
+                        </div>
+                        <div class="detector__sidebar__score__feedback">
+                            <h4>Feedback:</h4>
+                            <p>You should edit your text until there’s less detectable AI content.</p>
+                        </div>
+                    </div>
+                    <div class="detector__sidebar__description">
+                        <h1>AI Content Detector</h1>
+                        <p>
+                            Use our free detector to check up to 5,000 characters, and decide if you want to make
+                            adjustments before you publish.
+                            <br><br>
+                            To start fill in “URL” and “Text” inputs
+                        </p>
+                    </div>
+                </div>
+                <div class="detector__content">
+                    <div class="detector__content__input-group">
+                        <label for="url">Add a URL</label>
+                        <input id="url" name="url" type="text" placeholder="Enter URL..."/>
+                    </div>
+                    <div class="detector__content__input-group detector__content__input-group--textarea">
+                        <label for="text">Add text</label>
+                        <textarea id="text" name="text" placeholder="Enter Text..."></textarea>
+                    </div>
+                    <div class="detector__content__submit">
+                        <div class="detector__content__submit__count">
+                            <span>0</span>/5000 Characters
+                        </div>
+                        <div class="detector__content__submit__button">
+                            <div class="detector__content__submit__button__hint">To enable button fill URL and text
+                                above
+                            </div>
+                            <button type="submit">Analyze text</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

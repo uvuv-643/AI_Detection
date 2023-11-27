@@ -1,0 +1,12 @@
+@mixin button {
+  display: inline-flex;
+  padding: 11px 16px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
