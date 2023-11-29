@@ -1,0 +1,65 @@
+.profile__row {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.profile__col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.profile__sidebar, .profile__content {
+  background: white;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+.profile__sidebar {
+  width: 305px;
+  padding: 30px 24px 24px 24px;
+}
+.profile__sidebar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.profile__sidebar__item, .profile__sidebar__item button {
+  padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  align-items: center;
+  color: #807D80;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.profile__sidebar__item__icon img:nth-child(2), .profile__sidebar__item button__icon img:nth-child(2) {
+  display: none;
+}
+.profile__sidebar__item._active .profile__sidebar__item__icon img:nth-child(2), .profile__sidebar__item._active .profile__sidebar__item button__icon img:nth-child(2), .profile__sidebar__item button._active .profile__sidebar__item__icon img:nth-child(2), .profile__sidebar__item button._active .profile__sidebar__item button__icon img:nth-child(2) {
+  display: block;
+}
+.profile__sidebar__item._active .profile__sidebar__item__icon img:first-child, .profile__sidebar__item._active .profile__sidebar__item button__icon img:first-child, .profile__sidebar__item button._active .profile__sidebar__item__icon img:first-child, .profile__sidebar__item button._active .profile__sidebar__item button__icon img:first-child {
+  display: none;
+}
+.profile__sidebar__item._active, .profile__sidebar__item button._active {
+  color: #FF7664;
+}
+.profile__sidebar__item__icon, .profile__sidebar__item button__icon {
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
+}
+.profile__sidebar__item__icon img, .profile__sidebar__item button__icon img {
+  width: 100%;
+  height: 100%;
+}
+.profile__sidebar__item button {
+  margin-bottom: 0;
+}
+.profile__content {
+  width: calc(100% - 305px);
+}
+
+/*# sourceMappingURL=profile.css.map */
