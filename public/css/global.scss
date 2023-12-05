@@ -1,0 +1,130 @@
+@import 'variables';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+body, html, input, textarea, button {
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1340px;
+  margin: auto;
+  height: 100%;
+}
+
+.alert {
+    color: indianred;
+    border: 2px solid indianred;
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    ul {
+        margin: 0;
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  &__navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &__item {
+      font-size: 18px;
+      color: #000;
+      text-decoration: none;
+      &._active {
+        color: $medium;
+        font-weight: 700;
+      }
+      &:not(:last-child) {
+        margin-right: 80px;
+      }
+    }
+  }
+  &__profile {
+    a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+        &._active {
+            color: $medium;
+            font-weight: 600;
+            img {
+                margin-left: 12px;
+            }
+        }
+      img {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.content {
+  background: $light;
+  height: calc(100vh - 88px);
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 992px) {
+  .header {
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    display: block;
+    &__navbar {
+      display: block;
+      height: auto;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      &__item {
+        display: block;
+        margin-bottom: 5px;
+        &:not(:last-child) {
+          margin-right: 0px;
+        }
+      }
+    }
+    &__profile {
+      a {
+        width: 100%;
+        justify-content: center;
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+  .content {
+    padding-bottom: 30px;
+    height: 100%;
+  }
+}
