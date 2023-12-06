@@ -55,7 +55,7 @@ class User extends Authenticatable
     /**
      * @return bool
      */
-    public function haveCredits() : bool
+    public function hasCredits() : bool
     {
         $subscriptions = $this->subscriptions()->get();
         foreach ($subscriptions as $subscription) {

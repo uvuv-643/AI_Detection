@@ -151,3 +151,24 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+  .profile {
+    &__row {
+      flex-direction: column;
+    }
+    &__sidebar {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    &__personal {
+      &__row {
+        flex-direction: column;
+      }
+      &__input-group {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

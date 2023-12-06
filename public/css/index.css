@@ -20,6 +20,15 @@
   padding-right: 24px;
   border-right: 1px solid #E1E1E1;
 }
+.detector__sidebar__text {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.detector__sidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
 .detector__sidebar__score h2 {
   margin-top: 16px;
   font-weight: 600;

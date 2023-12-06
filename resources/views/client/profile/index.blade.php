@@ -12,8 +12,6 @@
                     @include('components.profile.sidebar')
                 </div>
                 <div class="profile__col">
-
-
                     <div class="profile__content">
                         <form action="{{ route('profile.update') }}" method="POST">
                             @csrf

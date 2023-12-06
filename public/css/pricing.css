@@ -109,5 +109,38 @@
   font-size: 18px;
   font-weight: 500;
 }
+.pricing__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing__buttons a {
+  display: inline-flex;
+  padding: 11px 16px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  background: #FF7664;
+  color: #FFF;
+  text-decoration: none;
+  margin-left: 7px;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+@media (max-width: 992px) {
+  .pricing__row {
+    flex-direction: column;
+  }
+  .pricing__item__wrapper {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
 
 /*# sourceMappingURL=pricing.css.map */

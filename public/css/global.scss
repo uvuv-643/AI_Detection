@@ -27,14 +27,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .alert {
-    color: indianred;
-    border: 2px solid indianred;
+    color: #000;
+
+    border: 1px solid $medium;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     padding: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 15px;
+  a {
+    color: $medium;
+    text-decoration: none;
+    font-weight: 600;
+  }
     ul {
         margin: 0;
         li {

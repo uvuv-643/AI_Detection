@@ -6,6 +6,7 @@ use App\Models\Detection;
 use App\Models\User;
 use Closure;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class DetectRequest extends FormRequest
 {
@@ -17,7 +18,7 @@ class DetectRequest extends FormRequest
         if (auth()->check()) {
             /** @var User $user */
             $user = auth()->user();
-            if ($user->haveCredits()) {
+            if ($user->hasCredits()) {
                 return true;
             }
         }
@@ -39,7 +40,7 @@ class DetectRequest extends FormRequest
                 if (mb_strlen($value) > 5000) {
                     /** @var User $user */
                     $user = auth()->user();
-                    if (!$user || !$user->haveCredits()) {
+                    if (!$user || !$user->hasCredits()) {
                         $fail("Limit of characters in your text exceeded");
                     }
                 }
@@ -48,6 +49,13 @@ class DetectRequest extends FormRequest
                 }
             }]
         ];
+    }
+
+    public function failedAuthorization()
+    {
+        throw new HttpResponseException(
+            redirect()->route('home')->withErrors(['To continue using the service and remove the 5000 character limit, you need to purchase one of the <a href="' . route('subscriptions') . '">possible plans</a>'])
+        );
     }
 
 }

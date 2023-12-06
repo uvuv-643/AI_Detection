@@ -24,13 +24,13 @@ class DetectionService
         $apiFullPath = "$apiUrl/$detectionId/check";
         $response = Http::withToken($apiToken)->post($apiFullPath, [
             'text' => $text,
-            'sandbox' => true,
+            'sandbox' => false,
         ]);
         if ($response->status() === 200) {
             $responseData = json_decode($response->body(), false);
             /** @var Detection $detection */
             $detection = Detection::query()->create([
-                'short_text' => Str::substr($text, 0, 300),
+                'short_text' => Str::substr($text, 0, 64),
                 'user_id' => $user?->id,
                 'ip' => $ip,
                 'response' => $responseData->summary->human

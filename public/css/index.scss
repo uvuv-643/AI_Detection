@@ -22,6 +22,15 @@
     justify-content: space-between;
     padding-right: 24px;
     border-right: 1px solid $grey;
+    &__text {
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 12px;
+    }
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
     &__score {
       h2 {
         margin-top: 16px;

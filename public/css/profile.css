@@ -160,4 +160,21 @@
   font-size: 18px;
 }
 
+@media (max-width: 992px) {
+  .profile__row {
+    flex-direction: column;
+  }
+  .profile__sidebar {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .profile__personal__row {
+    flex-direction: column;
+  }
+  .profile__personal__input-group {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
 /*# sourceMappingURL=profile.css.map */

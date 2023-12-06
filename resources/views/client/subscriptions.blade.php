@@ -31,7 +31,7 @@
                                     <h4>Features</h4>
                                     <ul>
                                         @foreach (collect($subscription->advantages)->slice(0, 3) as $advantage)
-                                            <li>{{ $advantage->title }}</li>
+                                            <li>{{ str_replace('image ', '', $advantage->title) }}</li>
                                         @endforeach
                                     </ul>
                                 </div>

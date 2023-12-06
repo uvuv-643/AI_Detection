@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .pricing {
   &__title {
@@ -110,6 +111,34 @@
       margin-top: 30px;
       font-size: 18px;
       font-weight: 500;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      @include button;
+      background: $medium;
+      color: #FFF;
+      text-decoration: none;
+      margin-left: 7px;
+      font-size: 18px;
+      margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .pricing {
+    &__row {
+      flex-direction: column;
+    }
+    &__item {
+      &__wrapper {
+        width: 100%;
+        flex: 0 0 100%;
+      }
     }
   }
 }

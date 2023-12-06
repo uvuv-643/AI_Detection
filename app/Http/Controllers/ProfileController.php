@@ -23,6 +23,11 @@ class ProfileController extends Controller
         return view('client.profile.transactions', compact('transactions'));
     }
 
+    public function support() : View
+    {
+        return view('client.profile.support');
+    }
+
     public function update(UserUpdateRequest $request) : RedirectResponse
     {
         /** @var User $user */

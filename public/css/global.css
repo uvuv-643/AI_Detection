@@ -26,14 +26,19 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .alert {
-  color: indianred;
-  border: 2px solid indianred;
+  color: #000;
+  border: 1px solid #FF7664;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   padding: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 15px;
+}
+.alert a {
+  color: #FF7664;
+  text-decoration: none;
+  font-weight: 600;
 }
 .alert ul {
   margin: 0;
@@ -84,7 +89,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .content {
-  background: #ddd;
+  background: #F2F2F5;
   height: calc(100vh - 88px);
   padding-top: 24px;
   padding-bottom: 24px;

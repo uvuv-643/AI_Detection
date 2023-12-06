@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subscription;
 use App\Services\ApiService;
 use Illuminate\Contracts\View\View;
 
@@ -19,9 +20,11 @@ class HomeController extends Controller
         return view('client.subscriptions', compact('subscriptions'));
     }
 
-    public function subscriptionBuy() : View
+    public function subscriptionBuy(ApiService $service, string $id) : View
     {
-        return view('payment');
+        $subscriptions = $service->fetchMemberships();
+        $subscription = $subscriptions->where('id', $id)->first();
+        return view('client.payment.client', compact('subscription'));
     }
 
 }
