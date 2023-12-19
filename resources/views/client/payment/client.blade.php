@@ -43,9 +43,7 @@
                 </div>
             </div>
             <div class="pricing__buttons">
-                <a href="#">Paypal</a>
-                <a href="#">Visa/Mastercard</a>
-                <a href="#">Crypto</a>
+                <a target="_blank" href="{{ route('payment.melstore', $subscription->id) }}">Melstore</a>
             </div>
         </div>
     </div>

@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>AI Detection</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="{{ asset('images/favicon.svg') }}">
+
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

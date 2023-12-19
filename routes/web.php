@@ -3,7 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Payment\MelstoreController;
+use App\Http\Controllers\Payment\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +35,7 @@ Route::get('/profile/support', [ProfileController::class, 'support'])->name('pro
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/detect', [DetectController::class, 'detect'])->name('detect');
+
+Route::get('/payment/melstore/{id}', [PaymentController::class, 'melstore'])->name('payment.melstore');
+
+Route::post('/webhook/melstore', [MelstoreController::class, 'webhook'])->name('webhook.melstore');

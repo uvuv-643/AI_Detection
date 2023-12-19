@@ -14,6 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
+
+    <title>AI Detection</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="{{ asset('images/favicon.svg') }}">
+
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     @stack('styles')
 </head>
