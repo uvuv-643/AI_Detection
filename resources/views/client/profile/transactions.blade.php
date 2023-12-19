@@ -34,7 +34,7 @@
                                     @foreach ($transactions as $transaction)
                                         <tr>
                                             <td>{{ $transaction->membership->title }}</td>
-                                            <td>{{ Carbon::parse($transaction->created_at)->format('dd M, Y ') }}</td>
+                                            <td>{{ Carbon::parse($transaction->created_at)->format('d M, Y ') }}</td>
                                             <td>{{ $transaction->credits_left }}</td>
                                         </tr>
                                     @endforeach

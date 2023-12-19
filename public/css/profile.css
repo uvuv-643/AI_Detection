@@ -176,5 +176,42 @@
     flex: 0 0 100%;
   }
 }
+.profile__transactions {
+  margin: 20px;
+}
+.profile__transactions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.profile__transactions table th, .profile__transactions table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.profile__transactions table th th, .profile__transactions table td th {
+  background-color: #f2f2f2;
+}
+.profile__transactions table th:hover, .profile__transactions table td:hover {
+  background-color: #f5f5f5;
+}
+.profile__transactions h1 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 20px;
+}
+.profile__transactions p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+.profile__transactions p a {
+  color: #FF7664;
+  text-decoration: none;
+  font-weight: bold;
+}
+.profile__transactions p a:hover {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=profile.css.map */

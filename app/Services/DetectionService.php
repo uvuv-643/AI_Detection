@@ -3,13 +3,17 @@
 namespace App\Services;
 
 use App\Exceptions\DetectException;
+use App\Models\APIToken;
 use App\Models\Detection;
+use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class DetectionService
 {
+
+    const CREDITS_BY_PHOTO = 3;
 
     /**
      * @throws DetectException
@@ -19,9 +23,15 @@ class DetectionService
         /** @var User $user */
         $user = auth()->user();
         $apiUrl = config('api.detection.url');
-        $apiToken = config('api.detection.token');
+        $apiToken = APIToken::query()->orderByDesc('created_at')->first()->token ?? null;
         $detectionId = Str::uuid();
         $apiFullPath = "$apiUrl/$detectionId/check";
+        if ($user) {
+            $subscription = Subscription::query()->where('user_id', $user->id)->where('credits_left', '>=', self::CREDITS_BY_PHOTO)->first();
+            $subscription->update([
+                'credits_left' => $subscription->credits_left - self::CREDITS_BY_PHOTO
+            ]);
+        }
         $response = Http::withToken($apiToken)->post($apiFullPath, [
             'text' => $text,
             'sandbox' => false,
@@ -37,6 +47,12 @@ class DetectionService
             ]);
             return $detection;
         } else {
+            if ($user) {
+                $subscription = Subscription::query()->where('user_id', $user->id)->first();
+                $subscription->update([
+                    'credits_left' => $subscription->credits_left + self::CREDITS_BY_PHOTO
+                ]);
+            }
             throw new DetectException($response);
         }
     }

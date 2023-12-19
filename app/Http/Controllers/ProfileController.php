@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class ProfileController extends Controller
 {
@@ -17,10 +18,27 @@ class ProfileController extends Controller
         return view('client.profile.index');
     }
 
-    public function transactions() : View
+    public function transactions() : View | RedirectResponse
     {
         $transactions = Subscription::all();
-        return view('client.profile.transactions', compact('transactions'));
+        $membershipsResponse = Http::get(config('api.memberships'));
+        if ($membershipsResponse->status() === 200) {
+            $memberships = json_decode($membershipsResponse->body(), false);
+            $transactions->map(function (Subscription $transaction) use ($memberships) {
+                foreach ($memberships as $membership) {
+                    if ($membership->id == $transaction->membership_id) {
+                        $transaction->membership = $membership;
+                        return $transaction;
+                    }
+                }
+                return null;
+            })->filter(function ($transaction) {
+                return $transaction;
+            });
+            return view('client.profile.transactions', compact('transactions'));
+        }
+        return back();
+
     }
 
     public function support() : View

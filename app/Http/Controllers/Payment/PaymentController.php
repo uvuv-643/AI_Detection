@@ -12,6 +12,7 @@ class PaymentController extends Controller
 
     public function melstore(string $id) : RedirectResponse
     {
+        if (!auth()->user()) return redirect()->route('login');
         try {
             $response = Http::get(config('api.memberships') . '/' . $id);
             if ($response->status() === 200) {
