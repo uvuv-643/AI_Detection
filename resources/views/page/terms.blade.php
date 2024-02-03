@@ -3,6 +3,16 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/index.css') }}"/>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="container">
