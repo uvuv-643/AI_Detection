@@ -39,3 +39,6 @@ Route::post('/detect', [DetectController::class, 'detect'])->name('detect');
 Route::get('/payment/melstore/{id}', [PaymentController::class, 'melstore'])->name('payment.melstore');
 
 Route::post('/webhook/melstore', [MelstoreController::class, 'webhook'])->name('webhook.melstore');
+
+Route::get('/terms-of-service', [MelstoreController::class, 'webhook'])->name('terms');
+Route::get('/privacy-policy', [MelstoreController::class, 'webhook'])->name('policy');

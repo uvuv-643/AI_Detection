@@ -13,6 +13,12 @@
             <a href="{{ route('subscriptions') }}" class="header__navbar__item @if (Route::is('subscriptions')) _active @endif">
                 Pricing
             </a>
+            <a href="{{ route('terms') }}" class="header__navbar__item @if (Route::is('terms')) _active @endif">
+                Terms of Service
+            </a>
+            <a href="{{ route('policy') }}" class="header__navbar__item @if (Route::is('policy')) _active @endif">
+                Privacy Policy
+            </a>
         </div>
         <div class="header__profile">
             @auth
