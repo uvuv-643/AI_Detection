@@ -12,6 +12,10 @@
             margin-top: 5px;
             margin-bottom: 5px;
         }
+        body {
+            padding-bottom: 150px;
+            padding-top: 50px;
+        }
     </style>
 @endpush
 @section('content')
