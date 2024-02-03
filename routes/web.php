@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\Payment\MelstoreController;
 use App\Http\Controllers\Payment\PaymentController;
 use App\Http\Controllers\ProfileController;
@@ -40,5 +41,5 @@ Route::get('/payment/melstore/{id}', [PaymentController::class, 'melstore'])->na
 
 Route::post('/webhook/melstore', [MelstoreController::class, 'webhook'])->name('webhook.melstore');
 
-Route::get('/terms-of-service', [MelstoreController::class, 'webhook'])->name('terms');
-Route::get('/privacy-policy', [MelstoreController::class, 'webhook'])->name('policy');
+Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms');
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('policy');
