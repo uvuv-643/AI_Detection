@@ -13,8 +13,9 @@
             margin-bottom: 5px;
         }
         .content {
-            padding-bottom: 150px !important;
-            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+            padding-top: 15px !important;
+            height: auto !important;
         }
     </style>
 @endpush
