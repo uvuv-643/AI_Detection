@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}"/>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <style>
-        body {
-            padding-bottom: 150px;
-            padding-top: 50px;
+        .content {
+            padding-bottom: 150px !important;
+            padding-top: 50px !important;
         }
         h1, h2, h3, h4, h5, h6 {
             margin-top: 30px;

@@ -12,9 +12,9 @@
             margin-top: 5px;
             margin-bottom: 5px;
         }
-        body {
-            padding-bottom: 150px;
-            padding-top: 50px;
+        .content {
+            padding-bottom: 150px !important;
+            padding-top: 50px !important;
         }
     </style>
 @endpush
