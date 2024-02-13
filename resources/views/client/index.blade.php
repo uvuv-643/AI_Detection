@@ -13,7 +13,10 @@
                 <div class="detector__sidebar">
                     <div class="detector__sidebar__score @if (isset($percent)) _active @endif">
                         <div class="detector__sidebar__score__percent">
-                            <span>{{ $percent ?? 0 }}</span>
+                            <span>
+                                @if (isset($percent))
+                                    {{ round($percent) }}</span>
+                                @endif
                             <img src="{{ asset('images/percent.svg') }}" alt="Percent"/>
                         </div>
                         <div class="detector__sidebar__score__title">

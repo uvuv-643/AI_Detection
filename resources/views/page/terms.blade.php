@@ -24,6 +24,8 @@
         <h3 class="c4" id="h.v8njlbi4837v"><span class="c2">TERMS OF SERVICE OUTLINE</span>
         </h3>
         <p class="c3"><span class="c6">Aidet.tech</span><span class="c0">&nbsp;Terms of Service Agreement</span></p>
+        <p class="c3"><span class="c0">OSA Management LLP Registered office address: Suite 4005 43 Bedford Street, London, England, WC2E 9HA</span></p>
+        <p></p>
         <p class="c1"><span class="c0">Service Description</span></p>
         <p class="c1"><span class="c0">Eligibility</span></p>
         <p class="c1"><span class="c0">Registration Obligations</span></p>
