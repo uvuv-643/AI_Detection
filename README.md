@@ -1,0 +1,1 @@
+# [AI detection](aidet.tech)

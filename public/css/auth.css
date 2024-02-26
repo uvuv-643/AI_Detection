@@ -1,0 +1,69 @@
+.auth {
+  border-radius: 30px;
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  padding: 24px 40px 24px 24px;
+  max-width: 500px;
+  margin: 50px auto auto;
+}
+.auth h3 {
+  font-size: 32px;
+  text-align: center;
+}
+.auth__form-input {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.auth__form-input label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.auth__form-input input {
+  font-size: 14px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  width: 100%;
+}
+.auth__form-input input:focus {
+  outline: none;
+  border-color: #333;
+}
+.auth__form-input input::placeholder {
+  opacity: 1;
+  color: #858585;
+}
+.auth__form-input button {
+  display: inline-flex;
+  padding: 11px 16px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  background: #FF7664;
+  color: white;
+  margin: auto;
+}
+.auth a {
+  text-align: center;
+  color: #FF7664;
+  margin-top: 20px;
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=auth.css.map */
