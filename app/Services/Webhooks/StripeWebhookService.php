@@ -33,10 +33,6 @@ class StripeWebhookService extends WebhookService
                         Log::error("Cannot fetch promocode stripe", ['stacktrace' => $e->getTrace()]);
                     }
                     $email = $paymentData->customer_details->email;
-                    $promocodeField = collect($paymentData->custom_fields)->first();
-                    if ($promocodeField) {
-                        $promocode = $promocodeField->value;
-                    }
                     $stripe = new StripeClient(config('stripe.secret'));
                     $paymentLink = $stripe->paymentLinks->retrieve($paymentData->payment_link, []);
                     return response()->json([
