@@ -25,4 +25,20 @@ class PaymentController extends Controller
         return redirect()->back()->withErrors('Failed to access payment service');
     }
 
+    public function stripe(string $id) : RedirectResponse
+    {
+        if (!auth()->user()) return redirect()->route('login');
+        try {
+            $response = Http::get(config('api.memberships') . '/' . $id);
+            if ($response->status() === 200) {
+                $responseBody = json_decode($response->body(), false);
+                if ($stripeLink = $responseBody->stripe_link) {
+                    return redirect($stripeLink);
+                }
+            }
+        } catch (Exception) {}
+        return redirect()->back()->withErrors('Failed to access payment service');
+    }
+
+
 }
