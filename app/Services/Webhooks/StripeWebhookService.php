@@ -34,11 +34,23 @@ class StripeWebhookService extends WebhookService
                     $email = $paymentData->customer_details->email;
                     $stripe = new StripeClient(config('stripe.secret'));
                     $paymentLink = $stripe->paymentLinks->retrieve($paymentData->payment_link, []);
-                    Http::post(config('api.webhook'), [
+                    $response = Http::post(config('api.webhook'), [
                         'stripe_link' => $paymentLink->url,
                         'email' => $email,
                         'promocode' => $promocode ?? null
                     ]);
+                    if ($response) {
+                        $responseData = json_decode($response->body(), false);
+                        /** @var User $targetUser */
+                        $targetUser = User::query()->where('email', $email)->first();
+                        if ($targetUser) {
+                            Subscription::query()->create([
+                                'user_id' => $targetUser->id,
+                                'credits_left' => $responseData->credits_left,
+                                'membership_id' => $responseData->membership_id
+                            ]);
+                        }
+                    }
                 }
             }
             return response()->json(['success' => true]);
