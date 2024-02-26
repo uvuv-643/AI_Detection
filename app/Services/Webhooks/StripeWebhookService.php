@@ -47,7 +47,8 @@ class StripeWebhookService extends WebhookService
                 }
             }
             return response()->json(['success' => true]);
-        } catch (Exception) {
+        } catch (Exception $e) {
+            Log::error("Global exception", ['stacktrace' => $e->getTrace(), 'request_all' => $request->all()]);
             return response()->json(['success' => false], 400);
         }
     }
