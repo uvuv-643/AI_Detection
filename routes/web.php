@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Payment\MelstoreController;
 use App\Http\Controllers\Payment\PaymentController;
+use App\Http\Controllers\Payment\StripeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
@@ -38,8 +39,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/detect', [DetectController::class, 'detect'])->name('detect');
 
 Route::get('/payment/melstore/{id}', [PaymentController::class, 'melstore'])->name('payment.melstore');
+Route::get('/payment/stripe/{id}', [PaymentController::class, 'stripe'])->name('payment.stripe');
 
 Route::post('/webhook/melstore', [MelstoreController::class, 'webhook'])->name('webhook.melstore');
+Route::post('/webhook/stripe', [StripeController::class, 'webhook'])->name('webhook.stripe');
 
 Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms');
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('policy');
