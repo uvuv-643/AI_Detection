@@ -35,7 +35,7 @@ class StripeWebhookService extends WebhookService
                     $email = $paymentData->customer_details->email;
                     $promocodeField = collect($paymentData->custom_fields)->first();
                     if ($promocodeField) {
-                        $promocode = $promocodeField['value'];
+                        $promocode = $promocodeField->value;
                     }
                     $stripe = new StripeClient(config('stripe.secret'));
                     $paymentLink = $stripe->paymentLinks->retrieve($paymentData->payment_link, []);
