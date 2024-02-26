@@ -44,8 +44,9 @@
             </div>
             <div class="pricing__buttons">
                 <a target="_blank" href="{{ route('payment.melstore', $subscription->id) }}">Melstore</a>
+                <a target="_blank" href="{{ route('payment.stripe', $subscription->id) }}">Stripe</a>
             </div>
-            <h4 style="margin-top: 15px; text-align: center; font-weight: 400; ">Be sure to enter the same email in melstone as your account has!</h4>
+            <h4 style="margin-top: 15px; text-align: center; font-weight: 400; ">Be sure to enter the same email as your account has!</h4>
         </div>
     </div>
 @endsection

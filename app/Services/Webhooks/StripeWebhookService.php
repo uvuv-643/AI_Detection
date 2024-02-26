@@ -21,7 +21,6 @@ class StripeWebhookService extends WebhookService
                 $requestData = json_decode(json_encode($request->data), false);
                 $paymentData = $requestData->object;
                 if ($paymentData->status === "complete") {
-                    $promocode = null;
                     try {
                         $customFields = $paymentData->custom_fields;
                         foreach ($customFields as $field) {
@@ -35,10 +34,10 @@ class StripeWebhookService extends WebhookService
                     $email = $paymentData->customer_details->email;
                     $stripe = new StripeClient(config('stripe.secret'));
                     $paymentLink = $stripe->paymentLinks->retrieve($paymentData->payment_link, []);
-                    return response()->json([
-                        'url' => $paymentLink->url,
+                    Http::post(config('api.webhook'), [
+                        'stripe_link' => $paymentLink->url,
                         'email' => $email,
-                        'promocode' => $promocode
+                        'promocode' => $promocode ?? null
                     ]);
                 }
             }
